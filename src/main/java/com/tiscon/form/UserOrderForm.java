@@ -36,6 +36,9 @@ public class UserOrderForm {
     @NotBlank(message = "転居先住所（市区町村以下）が入力されていません")
     private String newAddress;
 
+    @NotBlank
+    private String month;
+
     @Numeric(message = "段ボールの個数は数字で入力してください")
     @NotBlank(message = "段ボールの個数が入力されていません")
     private String box;
