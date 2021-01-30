@@ -13,27 +13,27 @@ import javax.validation.constraints.NotNull;
  */
 public class UserOrderForm {
 
-    @NotBlank
+    @NotBlank(message = "氏名が入力されていません")
     private String customerName;
 
-    @NotBlank
-    @Numeric
+    @NotBlank(message = "連絡先TELが入力されていません")
+    @Numeric(message = "連絡先TELが数値で入力されていません")
     private String tel;
 
     @Email
-    @NotBlank
+    @NotBlank(message = "連絡先メールアドレスが入力されていません")
     private String email;
 
     @NotBlank
     private String oldPrefectureId;
 
-    @NotBlank
+    @NotBlank(message = "転居元住所（市区町村以下）が入力されていません")
     private String oldAddress;
 
     @NotBlank
     private String newPrefectureId;
 
-    @NotBlank
+    @NotBlank(message = "転居先住所（市区町村以下）が入力されていません")
     private String newAddress;
 
     @NotBlank
