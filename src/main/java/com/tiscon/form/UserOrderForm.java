@@ -36,20 +36,20 @@ public class UserOrderForm {
     @NotBlank(message = "転居先住所（市区町村以下）が入力されていません")
     private String newAddress;
 
-    @Numeric
-    @NotBlank
+    @Numeric(message = "段ボールの個数は数字で入力してください")
+    @NotBlank(message = "段ボールの個数が入力されていません")
     private String box;
 
-    @Numeric
-    @NotBlank
+    @Numeric(message = "ベッドの個数は数字で入力してください")
+    @NotBlank(message = "ベッドの個数が入力されていません")
     private String bed;
 
-    @Numeric
-    @NotBlank
+    @Numeric(message = "自転車の個数は数字で入力してください")
+    @NotBlank(message = "自転車の個数が入力されていません")
     private String bicycle;
 
-    @Numeric
-    @NotBlank
+    @Numeric(message = "洗濯機の個数は数字で入力してください")
+    @NotBlank(message = "洗濯機の個数が入力されていません")
     private String washingMachine;
 
     @NotNull

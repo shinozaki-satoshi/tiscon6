@@ -15,9 +15,10 @@
 <div class="container">
   <form th:action="@{/result}" th:object="${userOrderForm}" class="form-horizontal" method="post">
     <h1>お見積り情報確認</h1>
-    <ul th:if="${#fields.hasErrors('all')}">
-      <li th:each="err : ${#fields.errors('all')}" th:text="${err}"></li>
+    <!-- <ul th:if="${#fields.hasErrors('all')}">
+         <li th:each="err : ${#fields.errors('all')}" th:text="${err}"></li>
     </ul>
+    -->
     <div class="col-sm-12">
       <h4>個人情報</h4>
       <ul th:if="${#fields.hasErrors('customerName')}">
@@ -81,6 +82,18 @@
         </tbody>
       </table>
       <h4>荷物情報</h4>
+      <ul th:if="${#fields.hasErrors('box')}">
+        <li th:each="err : ${#fields.errors('box')}" th:text="${err}"></li>
+      </ul>
+      <ul th:if="${#fields.hasErrors('bed')}">
+        <li th:each="err : ${#fields.errors('bed')}" th:text="${err}"></li>
+      </ul>
+      <ul th:if="${#fields.hasErrors('bicycle')}">
+        <li th:each="err : ${#fields.errors('bicycle')}" th:text="${err}"></li>
+      </ul>
+      <ul th:if="${#fields.hasErrors('washingMachine')}">
+        <li th:each="err : ${#fields.errors('washingMachine')}" th:text="${err}"></li>
+      </ul>
       <table class="table table-bordered">
         <col span="1" style="background-color: #A9B7C7;">
         <col span="2" style="background-color: #FFFFFF;">
