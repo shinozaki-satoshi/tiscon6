@@ -2,9 +2,7 @@ package com.tiscon.form;
 
 import com.tiscon.validator.Numeric;
 
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.*;
 
 /**
  * 顧客が入力する見積もり情報を保持するクラス。
@@ -17,7 +15,8 @@ public class UserOrderForm {
     private String customerName;
 
     @NotBlank(message = "連絡先TELが入力されていません")
-    @Numeric(message = "連絡先TELが半角数値で入力されていません")
+    //@Numeric(message = "連絡先TELが半角数値で入力されていません")
+    @Pattern(regexp = "^\\d{1,5}-?\\d{1,5}-?\\d{4}$", message = "電話番号の形式で入力してください")
     private String tel;
 
     @Email
