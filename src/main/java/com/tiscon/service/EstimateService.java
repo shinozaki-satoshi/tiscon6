@@ -69,7 +69,7 @@ public class EstimateService {
      * @param dto 見積もり依頼情報
      * @return 概算見積もり結果の料金
      */
-    public Integer getPrice(UserOrderDto dto) {
+    public Integer[] getPrice(UserOrderDto dto) {
         double distance = estimateDAO.getDistance(dto.getOldPrefectureId(), dto.getNewPrefectureId());
         // 小数点以下を切り捨てる
         int distanceInt = (int) Math.floor(distance);
@@ -81,8 +81,10 @@ public class EstimateService {
                 + getBoxForPackage(dto.getBed(), PackageType.BED)
                 + getBoxForPackage(dto.getBicycle(), PackageType.BICYCLE)
                 + getBoxForPackage(dto.getWashingMachine(), PackageType.WASHING_MACHINE);
-        if (boxes > 200)
-            return -1;
+        if (boxes > 200) {
+            Integer cost[] = {-1};
+            return cost;
+        }
         // 箱に応じてトラックの種類が変わり、それに応じて料金が変わるためトラック料金を算出する。
         int pricePerTruck = estimateDAO.getPricePerTruck(boxes);
 
@@ -95,7 +97,9 @@ public class EstimateService {
         double n=1;
         if(dto.getMonth()==9) n=1.2;
         else if(dto.getMonth()==3||dto.getMonth()==4) n=1.5;
-        return (int)((priceForDistance + pricePerTruck)*n + priceForOptionalService);
+        //return (int)((priceForDistance + pricePerTruck)*n + priceForOptionalService);
+        Integer cost[]={priceForDistance + pricePerTruck,(int)((priceForDistance + pricePerTruck)*n+priceForOptionalService),priceForOptionalService};
+        return cost;
     }
 
     /**
