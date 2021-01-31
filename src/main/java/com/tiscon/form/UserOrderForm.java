@@ -17,7 +17,7 @@ public class UserOrderForm {
     private String customerName;
 
     @NotBlank(message = "連絡先TELが入力されていません")
-    @Numeric(message = "連絡先TELが数値で入力されていません")
+    @Numeric(message = "連絡先TELが半角数値で入力されていません")
     private String tel;
 
     @Email
@@ -36,24 +36,26 @@ public class UserOrderForm {
     @NotBlank(message = "転居先住所（市区町村以下）が入力されていません")
     private String newAddress;
 
-    @NotBlank
+    @Numeric(message = "月は半角数字で入力してください")
+    @NotBlank(message = "月を入力してください")
     private String month;
 
+    @Numeric(message = "段ボールの個数は半角数字で入力してください")
     private String day;
 
     @Numeric(message = "段ボールの個数は数字で入力してください")
     @NotBlank(message = "段ボールの個数が入力されていません")
     private String box;
 
-    @Numeric(message = "ベッドの個数は数字で入力してください")
+    @Numeric(message = "ベッドの個数は半角数字で入力してください")
     @NotBlank(message = "ベッドの個数が入力されていません")
     private String bed;
 
-    @Numeric(message = "自転車の個数は数字で入力してください")
+    @Numeric(message = "自転車の個数は半角数字で入力してください")
     @NotBlank(message = "自転車の個数が入力されていません")
     private String bicycle;
 
-    @Numeric(message = "洗濯機の個数は数字で入力してください")
+    @Numeric(message = "洗濯機の個数は半角数字で入力してください")
     @NotBlank(message = "洗濯機の個数が入力されていません")
     private String washingMachine;
 
