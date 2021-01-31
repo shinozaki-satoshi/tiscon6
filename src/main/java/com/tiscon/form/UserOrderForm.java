@@ -37,6 +37,8 @@ public class UserOrderForm {
 
     @Numeric(message = "月は半角数字で入力してください")
     @NotBlank(message = "月を入力してください")
+    @Min(value = 1, message = "月の入力が不正です")
+    @Max(value = 12, message = "月の入力が不正です")
     private String month;
 
     private String day;
