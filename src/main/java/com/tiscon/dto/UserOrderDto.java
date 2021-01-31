@@ -22,6 +22,10 @@ public class UserOrderDto {
 
     private String bicycle;
 
+    private String month;
+
+    private String day;
+
     private String washingMachine;
 
     private boolean washingMachineInstallation;
@@ -120,5 +124,21 @@ public class UserOrderDto {
 
     public void setWashingMachineInstallation(Boolean washingMachineInstallation) {
         this.washingMachineInstallation = washingMachineInstallation;
+    }
+
+    public int getMonth() {
+        return Integer.parseInt(month);
+    }
+
+    public void setMonth(String month) {
+        this.month = month;
+    }
+
+    public int getDay() {
+        return Integer.parseInt(day);
+    }
+
+    public void setDay(String day) {
+        this.day = day;
     }
 }
