@@ -41,6 +41,9 @@ public class UserOrderForm {
     private String month;
 
     @Numeric(message = "段ボールの個数は半角数字で入力してください")
+    private String day;
+
+    @Numeric(message = "段ボールの個数は数字で入力してください")
     @NotBlank(message = "段ボールの個数が入力されていません")
     private String box;
 
@@ -161,5 +164,13 @@ public class UserOrderForm {
 
     public void setMonth(String month) {
         this.month = month;
+    }
+
+    public String getDay() {
+        return day;
+    }
+
+    public void setDay(String day) {
+        this.day = day;
     }
 }
