@@ -132,7 +132,7 @@ public class EstimateController {
         Integer price[] = estimateService.getPrice(dto);
 
         if (price[0] == -1) {
-            model.addAttribute("price", price);
+            model.addAttribute("price", price[0]);
             return "confirm";
         }
 
