@@ -17,6 +17,30 @@
     <h1>概算お見積り結果</h1>
     <div class="col-sm-12">
       <h2>概算お見積り結果は<span th:text="${price}"></span>円です。</h2>
+      <h3>詳細</h3>
+      <!--
+      <h5>基本料金：<span th:text="${price2}"></span>円</h5>
+      <h5>季節料金(差額)：<span th:text="${price4}"></span>円</h5>
+      <h5>オプション：<span th:text="${price3}"></span>円</h5>-->
+      <table class="table table-bordered">
+        <col span="1" style="background-color: #A9B7C7;">
+        <col span="2" style="background-color: #FFFFFF;">
+        <tbody>
+      <tr>
+        <th>基本料金</th>
+        <td><span th:text="${price2}"></span>円</td>
+      </tr>
+      <tr>
+        <th>季節手数料</th>
+        <td><span th:text="${price4}"></span>円</td>
+      </tr>
+      <tr>
+        <th>オプション</th>
+        <td><span th:text="${price3}"></span>円</td>
+        <!--<input type="hidden" name="tel" id="tel" th:value="*{tel}"/>-->
+      </tr>
+        </tbody>
+      </table>
       <h4>個人情報</h4>
       <table class="table table-bordered">
         <col span="1" style="background-color: #A9B7C7;">

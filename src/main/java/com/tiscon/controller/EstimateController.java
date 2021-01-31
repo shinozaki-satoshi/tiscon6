@@ -129,16 +129,19 @@ public class EstimateController {
         // 料金の計算を行う。
         UserOrderDto dto = new UserOrderDto();
         BeanUtils.copyProperties(userOrderForm, dto);
-        Integer price = estimateService.getPrice(dto);
+        Integer price[] = estimateService.getPrice(dto);
 
-        if (price == -1) {
+        if (price[0] == -1) {
             model.addAttribute("price", price);
             return "confirm";
         }
 
         model.addAttribute("prefectures", estimateDAO.getAllPrefectures());
         model.addAttribute("userOrderForm", userOrderForm);
-        model.addAttribute("price", price);
+        model.addAttribute("price", price[1]);
+        model.addAttribute("price2", price[0]);
+        model.addAttribute("price3", price[2]);
+        model.addAttribute("price4", price[1]-price[0]-price[2]);
         return "result";
     }
 
