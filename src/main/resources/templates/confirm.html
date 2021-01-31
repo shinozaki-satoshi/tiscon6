@@ -36,6 +36,9 @@
       <ul th:if="${#fields.hasErrors('newAddress')}">
         <li th:each="err : ${#fields.errors('newAddress')}" th:text="${err}"></li>
       </ul>
+      <ul th:if="${#fields.hasErrors('month')}">
+        <li th:each="err : ${#fields.errors('month')}" th:text="${err}"></li>
+      </ul>
       <table class="table table-bordered">
         <col span="1" style="background-color: #A9B7C7;">
         <col span="2" style="background-color: #FFFFFF;">
