@@ -39,7 +39,6 @@ public class UserOrderForm {
     @NotBlank(message = "月を入力してください")
     private String month;
 
-    @Numeric(message = "段ボールの個数は半角数字で入力してください")
     private String day;
 
     @Numeric(message = "段ボールの個数は数字で入力してください")
