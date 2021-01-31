@@ -19,6 +19,9 @@
          <li th:each="err : ${#fields.errors('all')}" th:text="${err}"></li>
     </ul>
     -->
+    <ul th:if="${price}==-1">
+      <h4>荷物が多すぎます。電話（xxx-xxxx-xxxx）で見積もりしてください。</h4>
+    </ul>
     <div class="col-sm-12">
       <h4>個人情報</h4>
       <ul th:if="${#fields.hasErrors('customerName')}">
